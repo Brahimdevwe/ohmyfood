@@ -51,59 +51,26 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
+  box-shadow: 2px 1px 16px -3px #000000;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   transition: transform 200ms;
   margin-top: 1rem;
-  box-shadow: 2px 1px 16px -3px #000000;
 }
 .explorer button:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
 
-.tuto {
-  counter-reset: steps;
+main {
   padding: 0 1rem;
 }
-.tuto ol {
+main ol {
   display: flex;
-  gap: 2rem;
 }
-@media (max-width: 1000px) {
-  .tuto ol {
-    flex-direction: column;
-  }
-}
-.tuto li {
-  position: relative;
-  list-style-type: none;
+main li {
   background: color #F6F6F6;
-  padding: 1.5rem 2rem;
-  flex-grow: 1;
-  border-radius: 1rem;
-  box-shadow: 2px 1px 16px -3px #000000;
-}
-.tuto li::before {
-  content: counter(steps);
-  counter-increment: steps;
-  color: white;
-  background-color: #9356DC;
-  width: 2rem;
-  height: 2rem;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 1rem;
-  left: -1rem;
-}
-.tuto li:hover {
-  transform: scale(1.02);
-}
-.tuto i.fas {
-  margin-right: 1rem;
-  color: #7E7E7E;
-  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: 1px solid red;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style..css.map */

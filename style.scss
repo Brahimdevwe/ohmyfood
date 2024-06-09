@@ -19,7 +19,7 @@ header{
     
 }
 
-main .city{
+.city{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,43 +28,95 @@ main .city{
     text-align: center;
     padding: 0.5rem;
 
+    & i {
+        font-size: 1.5rem;
+    }
 }
 
-main .city i {
-    font-size: 1.5rem;
-}
 
 
 /* Explorer */
+@mixin base-shadow {
+    box-shadow: 2px 1px 16px -3px #000000;
+}
+@mixin zoom {
+    transform: scale(1.02);
+}
 
 .explorer{
     text-align: center;
-}
-
-.explorer h2{
-    margin-top: 2rem;
+    
+    & h2{
+        margin-top: 2rem;
     font-size: 2rem;
 }
 
-.explorer p{
+& p{
     font-size: 1rem;
 }
 
-.explorer button{
+& button{
     color: white;
     font-weight: 300;
     font-size: 1.5rem;
     padding: 1rem 2rem;
     border: none;
     border-radius: 2rem;
-    box-shadow: 2px 1px 16px -3px #000000;
+    // box-shadow: 2px 1px 16px -3px #000000;
     background-image: linear-gradient(to top,rgba(147,86,220,0.9),rgba(255,121,218,0.9));
     transition: transform 200ms;
     margin-top: 1rem;
+    @include base-shadow;
 }
 
-.explorer button:hover{
+& button:hover{
     transform: scale(1.02);
     opacity: 0.9;
+    
+}
+}
+$tuto-bullet-height: 1rem;
+$lightgrey: #7E7E7E;
+.tuto{
+    counter-reset: steps;
+    padding: 0 1rem;
+   & ol{
+       display: flex;
+       gap: 2rem;
+       @media ( max-width: 1000px) {
+          flex-direction: column; 
+       }
+   } 
+   & li{
+    position: relative;
+    &::before {
+        content: counter(steps);
+        counter-increment: steps;
+        color: white;
+        background-color: #9356DC;
+        width: 2 * $tuto-bullet-height;
+        height: 2 * $tuto-bullet-height;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        position: absolute;
+        bottom: $tuto-bullet-height;
+        left: -$tuto-bullet-height;
 
+    }
+    list-style-type: none;
+    background: color #F6F6F6;
+    padding: 1.5rem 2rem;
+    flex-grow: 1;
+    border-radius: 1rem;
+    @include base-shadow;
+    &:hover{
+        @include zoom;
+    }
+   }
+   & i.fas {
+        margin-right: 1rem;
+        color: $lightgrey;
+        font-size: 1.5rem;
+   } 
 }
