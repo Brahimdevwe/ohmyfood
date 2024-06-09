@@ -11,6 +11,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+main {
+  padding: 0 7rem;
+}
+
 header {
   font-family: "shrikhand";
   text-align: center;
@@ -63,7 +67,7 @@ header {
 
 .tuto {
   counter-reset: steps;
-  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 .tuto ol {
   display: flex;
@@ -94,8 +98,9 @@ header {
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 1rem;
+  top: 50%;
   left: -1rem;
+  transform: translateY(-50%);
 }
 .tuto li:hover {
   transform: scale(1.02);
@@ -104,6 +109,21 @@ header {
   margin-right: 1rem;
   color: #7E7E7E;
   font-size: 1.5rem;
+}
+
+.menus {
+  background-color: #F6F6F6;
+}
+.menus .menus__cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.menus .card {
+  border: 1px solid black;
+  height: 4rem;
+  flex-grow: 1;
+  min-width: 30rem;
 }
 
 /*# sourceMappingURL=style.css.map */
