@@ -126,6 +126,7 @@ $lightgrey: #7E7E7E;
 }
 .menus{
     background-color: #F6F6F6;
+
    .menus__cards{
     display: flex;
     gap: 2rem;
@@ -137,5 +138,8 @@ $lightgrey: #7E7E7E;
     height: 4rem;
     flex-grow: 1;
     min-width: 30rem;
+    & .card__image{
+        background-image: url(./restaurants/)
+    }
    } 
 }
