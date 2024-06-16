@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
+
+// base scss
+
 *,
 ::before,
 ::after{
@@ -12,6 +15,10 @@ body{
 main{
     padding: 0 7rem;
 }
+h2{
+    padding: 2rem 0;
+    margin: 0;
+}
 header{
     font-family: "shrikhand";
     text-align: center;
@@ -21,6 +28,13 @@ header{
     position: relative;
     
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Classes Scss
 
 .city{
     display: flex;
@@ -38,14 +52,14 @@ header{
 
 
 
-/* Explorer */
+/* mixin */
 @mixin base-shadow {
     box-shadow: 2px 1px 16px -3px #000000;
 }
 @mixin zoom {
     transform: scale(1.02);
 }
-
+/* Explorer */
 .explorer{
     text-align: center;
     
@@ -80,6 +94,9 @@ header{
 }
 $tuto-bullet-height: 1rem;
 $lightgrey: #7E7E7E;
+$background: #F6F6F6;
+$purple: #9356DC;
+$color-tertiary:#99E2D0;
 .tuto{
     counter-reset: steps;
     margin-bottom: 2rem;
@@ -96,7 +113,7 @@ $lightgrey: #7E7E7E;
         content: counter(steps);
         counter-increment: steps;
         color: white;
-        background-color: #9356DC;
+        background-color: $purple;
         width: 2 * $tuto-bullet-height;
         height: 2 * $tuto-bullet-height;
         display: grid;
@@ -109,7 +126,7 @@ $lightgrey: #7E7E7E;
 
     }
     list-style-type: none;
-    background: color #F6F6F6;
+    background: $background;
     padding: 1.5rem 2rem;
     flex-grow: 1;
     border-radius: 1rem;
@@ -125,21 +142,60 @@ $lightgrey: #7E7E7E;
    } 
 }
 .menus{
-    background-color: #F6F6F6;
-
-   .menus__cards{
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    background-color: $background;
+    margin-bottom: 2rem;
     
+   .menus__cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+    @media ( max-width: 1000px) {
+        grid-template-columns: 1fr;
+    }
+    .new{
+        position: relative;
+    }
+    .new::before{
+        content: "Nouveau";
+        position: absolute;
+        height: 2rem;
+        width: 5rem;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary , $amount: 50%);
+        display: grid;
+        place-items: center; 
+        top: 1rem;
+        right: 1rem; 
+        border-radius: 1px;   
+    }
+   
    } 
    .card {
-    border: 1px solid black;
-    height: 4rem;
-    flex-grow: 1;
-    min-width: 30rem;
-    & .card__image{
-        background-image: url(./restaurants/)
+    
+
+    &__image{
+        height: 15rem;
+        background-size: cover;
+        border-radius: 1rem 1rem 0 0;
     }
+    @for $i from 1 through 4 {
+        &__image-#{$i} {
+            background-image: url(./images/restaurants/menu-#{$i}.jpg);
+        }
+    }
+    &__description{
+        position: relative;
+        h3,p{
+            margin: 0.5rem;
+        }
+        i {
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1.5rem;
+        }
+    }
+  
    } 
 }
