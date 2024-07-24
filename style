@@ -277,54 +277,6 @@ footer p {
   margin-right: 10rem;
   text-align: center;
 }
-#page-resto .resto__title h2::before {
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  content: "\f004";
-  font-size: 2rem;
-  right: 23rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-#page-resto .resto__title h2::after {
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  content: "\f004";
-  font-size: 2rem;
-  right: 23rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
-  opacity: 0;
-  color: transparent;
-  font-weight: 900;
-}
-#page-resto .resto__title h2:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
 @media (max-width: 1000px) {
   #page-resto .resto__title h2 {
     position: relative;
@@ -333,6 +285,7 @@ footer p {
     border-radius: 0 0 1rem 1rem;
     margin-left: 0;
     margin-right: 0;
+    text-align: left;
   }
   #page-resto .resto__title h2::before {
     display: inline-block;
@@ -382,6 +335,54 @@ footer p {
     opacity: 1;
     transform: translateY(-50%) scale(1.1);
   }
+}
+#page-resto .resto__title h2::before {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  right: 23rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+#page-resto .resto__title h2::after {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  right: 23rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+  opacity: 0;
+  color: transparent;
+  font-weight: 900;
+}
+#page-resto .resto__title h2:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 #page-resto .resto-main {
   margin-left: 10rem;
@@ -571,4 +572,4 @@ footer p {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style..map */

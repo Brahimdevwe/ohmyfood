@@ -55,7 +55,7 @@ a {
 /* mixin */
 
 @mixin base-shadow {
-  box-shadow: 2px 1px 16px -3px #000000;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
 }
 @mixin zoom {
   transform: scale(1.02);
@@ -391,12 +391,6 @@ footer {
   .resto__title {
     margin-top: -2rem;
     h2 {
-      @media (max-width: 1000px) {
-        @include heart-animated;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: left;
-      }
       @include heartanimeted-titleresto;
       font-family: "shrikhand";
       padding: 2rem 1rem;
@@ -405,6 +399,11 @@ footer {
       margin-left: 10rem;
       margin-right: 10rem;
       text-align: center;
+      @media (max-width: 1000px) {
+        @include heart-animated;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
   .resto-main {
